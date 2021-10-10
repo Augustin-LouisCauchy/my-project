@@ -1,0 +1,1261 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url(https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff);
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* -------------POPUP------------*/
+
+.popup__hidden {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: rgba(0, 0, 0, 0.75);
+  overflow-y: auto;
+  z-index: 999;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.popup-container {
+  position: relative;
+  max-width: 390px;
+  width: 95%;
+  padding: 54px 30px;
+  margin: auto;
+  background-color: #ffffff;
+}
+
+.popup-title {
+  font-size: 18px;
+  font-family: "OpenSans-Bold", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: #0f0d0e;
+}
+
+.popup-title:after {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12px;
+  margin-bottom: 27px;
+  background-color: #e1d9bd;
+}
+
+.form-row {
+  margin-bottom: 27px;
+}
+
+.select-group {
+  display: block;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 8px;
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 13px;
+}
+
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  width: 100%;
+  height: 48px;
+  padding-left: 18px;
+  padding-right: 14px;
+  border: none;
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 13px;
+  color: #919292;
+  background-image: url(https://raw.githubusercontent.com/Augustin-LouisCauchy/my-project/edb7750c1601f212406e2be029aa17de17c6fb44/svg/form-arrows.svg);
+  background-repeat: no-repeat;
+  background-size: 8px auto;
+  background-position: right 14px center;
+  background-color: #f4f7f6;
+}
+
+.select:focus {
+  outline: 1px solid #b59f5b;
+}
+
+.radio-group {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.radio {
+  display: none;
+}
+
+.radio-group-text {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 13px;
+}
+
+.radio-group-text::before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 18px;
+  height: 18px;
+  margin-right: 4px;
+  background-image: url(https://raw.githubusercontent.com/Augustin-LouisCauchy/my-project/edb7750c1601f212406e2be029aa17de17c6fb44/svg/form-empty-circle.svg);
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: center center;
+}
+
+.radio:checked ~ .radio-group-text::before {
+  background-image: url(https://raw.githubusercontent.com/Augustin-LouisCauchy/my-project/edb7750c1601f212406e2be029aa17de17c6fb44/svg/form-circle.svg);
+}
+
+.field-textarea {
+  resize: none;
+  display: block;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 130px;
+  max-height: 130px;
+  padding: 20px;
+  border: none;
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 13px;
+  background-color: #f4f7f6;
+}
+
+.field-textarea:focus {
+  outline: 1px solid #b59f5b;
+}
+
+.button-form {
+  width: 100%;
+  height: 45px;
+  border: none;
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  background-color: #b59f5b;
+  color: #ffffff;
+  cursor: pointer;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    #000000 50%,
+    transparent 50%
+  );
+  background-image: linear-gradient(45deg, #000000 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+
+.button-form:hover {
+  background-position: 0;
+}
+
+.popup-close {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  right: 0;
+  top: -27px;
+  border: none;
+  background-color: transparent;
+  background-image: url(https://raw.githubusercontent.com/Augustin-LouisCauchy/my-project/edb7750c1601f212406e2be029aa17de17c6fb44/svg/form-x.svg);
+  cursor: pointer;
+}
+
+/*------------POPUP ENDS------------*/
+
+/*------------HEADER----------------*/
+
+.intro {
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  background-image: url("https://raw.githubusercontent.com/Augustin-LouisCauchy/my-project/main/img/banner-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.intro::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #000000;
+  opacity: 0.6;
+}
+
+.header-container {
+  margin: 0 auto;
+  padding-top: 27px;
+  padding-right: 15px;
+  padding-bottom: 147px;
+  padding-left: 15px;
+  max-width: 1200px;
+}
+
+/*-------HEADER ENDS--------*/
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  width: 180px;
+}
+
+.menu-button {
+  display: none;
+  border: none;
+  padding-right: 34px;
+  cursor: pointer;
+}
+
+.bar1::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  background-color: #ffffff;
+}
+
+.bar2::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  margin-top: 8px;
+  background-color: #ffffff;
+}
+
+.bar3::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  margin-top: 16px;
+  background-color: #ffffff;
+}
+
+.menu-list {
+  display: flex;
+  list-style-type: none;
+}
+
+.menu-list-item {
+  margin-left: 35px;
+}
+
+.menu-link {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 81.25%;
+  height: 10px;
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.menu-link:hover {
+  border-bottom: 2px solid #ffffff;
+}
+
+.header-title {
+  font-family: "OpenSans-Bold", sans-serif;
+  width: 735px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 103px;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 285.7%;
+  position: relative;
+  z-index: 1;
+}
+
+/*-------TRENDS-------*/
+
+.trends-wrapper {
+  margin-top: 60px;
+}
+
+.trends-title {
+  font-size: 127%;
+  font-family: "OpenSans-Bold", sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  color: #0f0d0e;
+}
+
+.trends-title::after {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12px;
+  background-color: #e1d9bd;
+}
+
+.trends-posts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 27px;
+}
+
+.trends-post {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  width: calc(25% - 3px);
+  min-height: 320px;
+  padding: 20px;
+  background-size: cover;
+}
+
+.trends-post {
+  position: relative;
+  z-index: 0;
+
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-end;
+
+  background-size: cover;
+  padding: 20px;
+}
+
+.gardens {
+  background-image: url(https://raw.githubusercontent.com/Augustin-LouisCauchy/my-project/main/img/trend1.jpg);
+  background-color: #000000;
+}
+
+.cheeses {
+  background-image: url(https://raw.githubusercontent.com/Augustin-LouisCauchy/my-project/main/img/trend2.jpg);
+  background-color: #000000;
+}
+
+.mount-travel {
+  background-image: url(https://raw.githubusercontent.com/Augustin-LouisCauchy/my-project/main/img/trend3.jpg);
+  background-color: #000000;
+}
+
+.lemon-vitamin {
+  background-image: url(https://raw.githubusercontent.com/Augustin-LouisCauchy/my-project/main/img/trend4.jpg);
+  background-color: #000000;
+}
+
+.trends-post::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  background-color: #000000;
+  opacity: 0.6;
+}
+
+.trends-post-info {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  flex-grow: 1;
+  padding: 25px;
+  border: 3px solid #b59f5b;
+}
+
+.trends-tags-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 11px;
+  list-style: none;
+}
+
+.trends-tags-item {
+  margin-right: 20px;
+}
+
+.trends-tags-link {
+  font-size: 14px;
+  font-family: "OpenSans-Bold", sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #b59f5b;
+  background-image: linear-gradient(#b59f5b, #b59f5b);
+  background-position: 100% 0%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  transition: background-size 0.3s;
+}
+
+.trends-tags-link:hover {
+  background-size: 100% 2px;
+}
+
+.trends-post-link {
+  font-size: 20px;
+  font-family: "OpenSans-Bold", sans-serif;
+  line-height: 1.2;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+}
+
+/*-------TRENDS END-------*/
+/*-------CONTENT-------*/
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 41px;
+  padding-left: 15px;
+  padding-bottom: 64px;
+  padding-right: 15px;
+  width: 1200px;
+}
+
+.picture {
+  width: 100%;
+  background-color: #eff6f1;
+  object-fit: cover;
+}
+
+.post {
+  display: flex;
+}
+
+.post:not(:last-child) {
+  margin-bottom: 60px;
+}
+
+.post-info {
+  width: 367px;
+  margin-left: 30px;
+}
+
+.post-tags {
+  display: flex;
+  list-style-type: none;
+}
+
+.tag {
+  margin-right: 20px;
+}
+
+.link-tag {
+  font-family: "OpenSans-Bold", sans-serif;
+  color: #b59f5b;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 87.5%;
+}
+
+.link-tag:hover {
+  color: #b59f5b;
+  border-bottom: 2px solid #b59f5b;
+}
+
+.link-post-title {
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.post-title {
+  font-family: "OpenSans-Bold", sans-serif;
+  color: #0f0d0e;
+  font-size: 20px;
+  line-height: 1.1;
+  margin-top: 16px;
+  margin-bottom: 38px;
+}
+
+.post-date {
+  margin-bottom: 52px;
+}
+
+.post-dates {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 75%;
+  color: #888888;
+}
+
+.noname-author {
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 75%;
+  color: #000000;
+  margin-left: 15px;
+}
+
+.post-text {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 93.75%;
+  line-height: 1.4;
+  color: #0f0d0e;
+  width: 367px;
+}
+
+.list-of-festivals {
+  margin-top: 17px;
+}
+
+/*-------CONTENT ENDS--------*/
+/*-------SIDEBAR----------*/
+
+.sidebar {
+  width: 272px;
+  flex-shrink: 0;
+}
+
+.section-news {
+  width: 100%;
+}
+
+.title-sidebar {
+  position: relative;
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 88%;
+  color: #0f0d0e;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 46px;
+}
+
+.title-points::after {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #b59f5b;
+  margin-top: 14px;
+  opacity: 0.4;
+}
+
+.post-sidebar {
+  display: flex;
+  margin-top: 22px;
+}
+
+.first-sidebar-post {
+  margin-top: 29px;
+}
+
+.sidebar-picture {
+  width: 70px;
+  margin-right: 20px;
+}
+
+.sidebar-info {
+  display: flex;
+}
+
+.aside-dates {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 75%;
+  color: #a9a9a9;
+}
+
+.sidebar-link-captions {
+  text-decoration: none;
+}
+
+.sidebar-captions {
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 87.5%;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.sidebar-captions:hover {
+  color: #b59f5b;
+}
+
+.search {
+  margin-top: 60px;
+  justify-content: space-between;
+  position: relative;
+}
+
+.search-field {
+  content: "";
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.button {
+  content: "";
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.search-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  height: 48px;
+  padding-left: 19px;
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 81.25%;
+  color: #a2a4a3;
+  border: none;
+  background-color: #f4f7f6;
+}
+
+.search-input:focus {
+  outline: 1px solid #b59f5b;
+}
+
+.search-button {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  color: #ffffff;
+  background-color: #b59f5b;
+  border: none;
+
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/search.svg");
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: center center;
+  cursor: pointer;
+}
+
+.section-sidebar {
+  margin-top: 62px;
+}
+
+.form {
+  margin-top: 40px;
+}
+
+.form-field,
+.button-mailing {
+  content: "";
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+.form-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  width: 100%;
+  height: 48px;
+  border: none;
+  padding-left: 18px;
+  background-color: #f4f7f6;
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 81.25%;
+  color: #a2a4a3;
+}
+.form-input:focus {
+  outline: 1px solid #b59f5b;
+}
+
+.form-button {
+  margin-top: 18px;
+  width: 100%;
+  height: 48px;
+  border: none;
+  background-color: #b59f5b;
+}
+
+.button-subscribe {
+  display: block;
+  padding-top: 19px;
+  padding-bottom: 16px;
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 88%;
+  text-transform: uppercase;
+  background-color: #b59f5b;
+  color: #ffffff;
+}
+
+.button-subscribe:hover {
+  background-color: #323232;
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.tag-item {
+  border: 3px solid #eeeeee;
+  margin: 0 6px 6px 0;
+}
+
+.tag-item:hover {
+  border: 3px solid #b59f5b;
+}
+
+.tag-link {
+  text-decoration: none;
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 75%;
+  text-transform: uppercase;
+  color: #0f0d0e;
+  padding: 8px 15px 7px 13px;
+}
+
+.themes-item {
+  list-style: none;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.themes-item:nth-child(n + 2) {
+  padding-top: 15px;
+}
+
+.themes-link {
+  text-decoration: none;
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 88%;
+  color: #000000;
+}
+
+.themes-link:hover {
+  color: #b59f5b;
+}
+
+.number-themes {
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 75%;
+  color: #b59f5b;
+  margin-left: 4px;
+  vertical-align: super;
+}
+
+/*-------SHOP-------*/
+
+.shop {
+  max-width: 1200px;
+  margin-bottom: 64px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.shop-title {
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 20px;
+  color: #0f0d0e;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.shop-title::after {
+  content: "";
+  display: block;
+  width: 66px;
+  height: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12px;
+
+  background-color: #e1d9bd;
+}
+
+.products {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 27px;
+}
+
+.product-section {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-image {
+  object-fit: cover;
+  background-color: #eff6f1;
+}
+
+.product-info {
+  flex-grow: 1;
+  padding: 50px 21px 27px;
+  margin-top: -36px;
+  border: 2px solid #b59f5b;
+}
+
+.product-title-link {
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 20px;
+  color: #0f0d0e;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.product-description {
+  margin-top: 3px;
+  margin-bottom: 20px;
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 15px;
+  color: #0f0d0e;
+}
+
+.description-link {
+  text-decoration: none;
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 15px;
+  color: #b59f5b;
+}
+
+.description-link:hover {
+  border-bottom: 2px solid #b59f5b;
+}
+
+.purchase {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.old-price {
+  display: block;
+
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 14px;
+  color: #0f0d0e;
+  text-decoration: line-through;
+}
+
+.new-price {
+  display: block;
+
+  font-family: "OpenSans-Bold", sans-serif;
+  font-size: 20px;
+  color: #0f0d0e;
+}
+
+.shop-product {
+  display: flex;
+  padding: 19px 28px;
+
+  background-color: #b59f5b;
+}
+
+.shop-link {
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 14px;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/*--------SHOP ENDS--------*/
+/*--------FOOTER-------*/
+
+.footer {
+  text-align: center;
+  width: 1200px;
+  background-color: #f4f7f6;
+  margin: 0 auto;
+}
+
+.socials {
+  height: 83px;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 73px;
+  padding: 31px 476px;
+}
+
+.socials-item:not(:last-child) {
+  margin-right: 27px;
+}
+
+.socials-link {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px;
+}
+
+.socials-link-twitter {
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/004-twitter.svg");
+}
+
+.socials-link-pinterest {
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/001-pinterest.svg");
+}
+
+.socials-link-facebook {
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/002-facebook-logo.svg");
+}
+
+.socials-link-instagram {
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/005-instagram.svg");
+}
+
+.socials-link-tumblr {
+  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg");
+}
+
+.socials-link-text {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  width: 1px;
+}
+
+.copyright {
+  text-align: center;
+  margin-bottom: 41px;
+}
+
+.copyright-link {
+  text-decoration: none;
+  font-family: "OpenSans-Regular", sans-serif;
+  font-size: 75%;
+  color: #999999;
+}
+
+/*----------------TABLET-------------*/
+
+@media (min-width: 641px) and (max-width: 1250px) {
+  .intro {
+    background-image: url("https://raw.githubusercontent.com/Augustin-LouisCauchy/my-project/main/img/banner-bg-tablet.jpg");
+  }
+  .logo {
+    padding-left: 35px;
+    width: 158px;
+  }
+  .menu-button {
+    display: flex;
+  }
+  .menu-list {
+    display: none;
+  }
+  .header-title {
+    width: 604px;
+    font-size: 40px;
+  }
+  .trends-wrapper {
+    margin-top: 50px;
+  }
+  .trends-title {
+    font-size: 18px;
+  }
+  .trends-posts {
+    flex-wrap: wrap;
+  }
+  .trends-post {
+    width: calc((100% / 2) - 3px);
+    min-height: 240px;
+  }
+  .trends-post:nth-child(n + 3) {
+    margin-top: 3px;
+  }
+  .trends-post:nth-child(n + 2) {
+    margin-left: 0;
+  }
+  .trends-post-link {
+    font-size: 17px;
+  }
+  .content {
+    max-width: 767px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 0 15px;
+  }
+  .posts {
+    max-width: 391px;
+    margin-left: 35px;
+    margin-right: 33px;
+  }
+  .post {
+    padding-bottom: 0;
+    flex-direction: column;
+    border-bottom: 3px solid #eeeeee;
+  }
+  .post:last-child {
+    border: none;
+  }
+  .post:nth-child(n + 2) {
+    margin-top: 40px;
+  }
+  .picture {
+    min-width: 380px;
+    max-width: 380px;
+    min-height: 294px;
+    max-height: 294px;
+    margin-bottom: 17px;
+  }
+  .post-info {
+    width: 394px;
+    padding-left: 0;
+  }
+  .post-title {
+    font-size: 17px;
+    margin-bottom: 40px;
+  }
+  .post-date {
+    margin-bottom: 0px;
+  }
+
+  .post-text {
+    font-size: 15px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  .post-dates,
+  .noname-autor {
+    font-size: 12px;
+  }
+  .title-sidebar {
+    font-size: 14px;
+    margin-bottom: 46px;
+  }
+  .sidebar-picture {
+    margin-right: 21px;
+  }
+  .shop {
+    max-width: 767px;
+    margin-bottom: 50px;
+  }
+  .shop-title {
+    font-size: 18px;
+  }
+  .products {
+    flex-wrap: wrap;
+  }
+
+  .product-section {
+    width: calc(95% / 2);
+    margin-bottom: 48px;
+  }
+
+  .product-section:nth-child(even) {
+    margin-left: 5%;
+  }
+
+  .product-title-link {
+    font-size: 17px;
+  }
+  .footer {
+    margin-top: 23px;
+    padding: 0 34px;
+  }
+
+  .socials {
+    margin-bottom: 51px;
+  }
+}
+
+/*------------PHONE---------*/
+
+@media (max-width: 640px) {
+  .intro {
+    background-image: url("https://raw.githubusercontent.com/Augustin-LouisCauchy/my-project/main/img/banner-mobile.jpg");
+  }
+  .container {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+
+  .logo {
+    max-width: 270px;
+    width: 100%;
+    margin-top: 200px;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .menu-list {
+    display: none;
+  }
+
+  .menu {
+    margin-left: auto;
+  }
+
+  .header-title {
+    max-width: 280px;
+    padding-top: 19px;
+    padding-bottom: 210px;
+
+    font-size: 26px;
+    line-height: 1.4em;
+  }
+  .trends-wrapper {
+    margin-top: 50px;
+  }
+  .trends-title {
+    font-size: 16px;
+  }
+  .trends-posts {
+    flex-wrap: wrap;
+  }
+  .trends-post {
+    min-height: 230px;
+    width: 100%;
+    margin-bottom: 2px;
+  }
+  .trends-post-info {
+    padding: 20px;
+  }
+  .trend-post-title {
+    font-size: 16px;
+  }
+  .content {
+    flex-direction: column;
+    max-width: 330px;
+    margin-top: 44px;
+    padding: 0 17px;
+  }
+  .posts {
+    max-width: 330px;
+    margin-right: 0;
+    margin-bottom: 35px;
+  }
+
+  .post {
+    flex-direction: column;
+    border-bottom: 3px solid #eeeeee;
+    padding-bottom: 22px;
+  }
+
+  .post:nth-child(n + 2) {
+    margin-top: 35px;
+  }
+  .post-image {
+    min-width: 260px;
+    max-width: 100%;
+    min-height: 200px;
+    max-height: 301px;
+    margin-right: 0;
+    margin-bottom: 8px;
+  }
+  .post-info {
+    padding: 0;
+    min-width: 260px;
+    max-width: 100%;
+  }
+  .post-title {
+    font-size: 16px;
+    margin-bottom: 17px;
+  }
+  .post-date {
+    margin-bottom: 24px;
+  }
+  .sidebar {
+    width: auto;
+    max-width: 460px;
+  }
+
+  .title-sidebar {
+    margin-bottom: 28px;
+    font-size: 16px;
+  }
+  .sidebar-info {
+    width: 100%;
+  }
+  .search,
+  .section-sidebar {
+    margin-bottom: 44px;
+  }
+  .shop {
+    max-width: 330px;
+    margin-bottom: 50px;
+  }
+
+  .shop-title {
+    font-size: 16px;
+  }
+
+  .products {
+    flex-direction: column;
+  }
+
+  .product-section {
+    width: 100%;
+  }
+
+  .product-section:nth-child(n + 2) {
+    margin-top: 27px;
+  }
+
+  .product-img {
+    width: 285px;
+  }
+
+  .product-info {
+    padding: 54px 20px 26px 18px;
+  }
+
+  .footer {
+    padding: 0 15px;
+  }
+
+  .socials {
+    margin-bottom: 51px;
+  }
+}
